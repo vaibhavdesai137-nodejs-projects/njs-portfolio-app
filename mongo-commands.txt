@@ -21,14 +21,29 @@ db.createUser({
 
 // create collection
 db.projects.drop();
+db.categories.drop();
 db.createCollection('projects');
+db.createCollection('categories');
 show collections;
 
 // add records
 
+db.categories.insert({
+    "title": "NodeJS"
+});
+
+db.categories.insert({
+    "title": "Bootstrap v3"
+});
+
+db.categories.insert({
+    "title": "Bootstrap v4"
+});
+
 db.projects.insert({
     "title": "Njs-chat-app",
     "desc": "NodeJS Chat Appication",
+    "category": "NodeJS",
     "cover": "njs-chat-app.png"
 });
 
