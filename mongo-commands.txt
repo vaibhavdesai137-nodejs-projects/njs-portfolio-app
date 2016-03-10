@@ -1,0 +1,36 @@
+
+// start mongo
+sudo ./mongod --directoryperdb --dbpath /Users/vaidesai/Development/mongodb/data/db/ --logpath /Users/vaidesai/Development/mongodb/log/mongodb.log --logappend -rest
+
+// run mongo shell
+./mongo
+
+// create DB
+use njs-portfolio-app-db;
+show dbs;
+
+// create users
+db.createUser({
+    user: "dbuser",
+    pwd: "dbpassword",
+    roles: [{
+        role: "readWrite", 
+        db: "njs-portfolio-app-db" 
+    }]
+});
+
+// create collection
+db.projects.drop();
+db.createCollection('projects');
+show collections;
+
+// add records
+
+db.projects.insert({
+    "title": "Njs-chat-app",
+    "desc": "NodeJS Chat Appication",
+    "cover": "njs-chat-app.png"
+});
+
+db.projects.find();
+db.projects.find().pretty();
