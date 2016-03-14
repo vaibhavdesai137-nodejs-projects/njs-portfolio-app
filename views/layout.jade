@@ -1,7 +1,63 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
+html(lang='en')
+    
+    head
+        title Home - NodeJS Portfolio App
+        
+        link(href='/stylesheets/bootstrap.css', rel='stylesheet')
+        link(href='/stylesheets/freelancer.css', rel='stylesheet')
+        link(href='/stylesheets/style.css', rel='stylesheet')
+        link(href='/stylesheets/footer.css', rel='stylesheet')
+
+        link(href='fonts/font-awesome-4.5.0/css/font-awesome.min.css', rel='stylesheet')
+        link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+        link(href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+    
+    body#page-top.index
+        nav.navbar.navbar-inverse.navbar-fixed-top
+            .container
+                // Brand and toggle get grouped for better mobile display
+                .navbar-header.page-scroll
+                    button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+                    span.sr-only Toggle navigation
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href='/') Vaibhav Desai
+                #bs-example-navbar-collapse-1.collapse.navbar-collapse
+                    ul.nav.navbar-nav.navbar-right
+                        li.hidden
+                            a(href='#page-top')
+                        li.page-scroll
+                            a(href='/portfolio') Portfolio
+                        li.page-scroll
+                            a(href='/about') About
+                        li.page-scroll
+                            a(href='/contact') Contact
+    
+    // individual pages
     block content
+    
+    
+    // Footer
+    footer
+        .col-md-12
+            a.btn.btn-success(title='Source code for this website', target='_blank', href='https://github.com/vaibhavdesai137-nodejs-projects/njs-portfolio-app')
+                i.fa.fa-code.fa-lg
+            a.btn.btn-success(title='My GitHub', target='_blank', href='https://github.com/vaibhavdesai137')
+                i.fa.fa-github.fa-lg
+            a.btn.btn-success(title='My LinkedIn', target='_blank', href='https://www.linkedin.com/in/vaibhav-desai-a864aa15')
+                i.fa.fa-linkedin.fa-lg
+            a.btn.btn-success(title='My Facebook', target='_blank', href='https://www.facebook.com/vaibhav.desai.165033')
+                i.fa.fa-facebook.fa-lg
+        .col-md-12
+            p Vaibhav Desai
+    
+    script(src='js/jquery.js')
+    script(src='js/bootstrap.min.js')
+    script(src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js')
+    script(src='js/classie.js')
+    script(src='js/cbpAnimatedHeader.js')
+    script(src='js/jqBootstrapValidation.js')
+    script(src='js/contact_me.js')
+    script(src='js/freelancer.js')
