@@ -80,6 +80,7 @@ hr.star-primary:after {
 }
 
 header {
+    min-height: 100%;
     text-align: center;
     color: #fff;
     background: #18bc9c;
