@@ -7,8 +7,8 @@ var configs = {
         dbPassword: "dbpassword"
     },
     heroku: {
-        dbHost: "ds017248.mlab.com",
-        dbPort: "17248",
+        dbHost: "ds051334.mlab.com",
+        dbPort: "51334",
         dbName: "njs-portfolio-app-db",
         dbUser: "dbuser",
         dbPassword: "dbpassword"
@@ -16,7 +16,7 @@ var configs = {
 }
 
 // change this heroku deployment
-var currentEnv = "dev";
+var currentEnv = "heroku";
 myconfig = configs[currentEnv];
 
 console.log('Current env: ' + currentEnv);
