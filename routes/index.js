@@ -2,8 +2,13 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function (req, res, next) {
-    res.location('/home');
-    res.redirect('/home');
+    
+    var model = {
+        title: "Home",
+        activeNavbar: ""
+    };
+    
+    res.render('index', model);
 });
 
 module.exports = router;

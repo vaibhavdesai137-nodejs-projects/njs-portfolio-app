@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+
+    br
+    br
+    br
+    br
+    br
+    br
+    
+    .container
+
+        .col-md-6
+
+            br
+            br
+            
+            h1.text-center Edit Project
+            p.text-center Form inputs not validated :D
+
+            br
+            br
+
+            form(method="post", action="/admin/projects/edit/#{project._id}")
+                .form-group
+                    label Project Title
+                    input.form-control(type="text", name="projectTitle", value="#{project.title}")
+                .form-group
+                    label Project Category
+                    input.form-control(type="text", name="projectCategory", value="#{project.category}")
+                .form-group
+                    label Post Description
+                    textarea.form-control(name="projectDesc", id="projectDesc", rows="10") #{project.desc}
+                .form-group
+                    label Project Cover
+                    input.form-control(type="text", name="projectCover", value="#{project.cover}")
+                button.btn.btn-info(type='submit') Save Changes
+                
+    br
+    br

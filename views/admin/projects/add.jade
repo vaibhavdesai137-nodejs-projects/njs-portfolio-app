@@ -1,0 +1,41 @@
+extends ../layout
+
+block content
+
+    br
+    br
+    br
+    br
+    br
+    br
+    
+    .container
+
+        .col-md-6
+
+            br
+            br
+            
+            h1.text-center Add Project
+            p.text-center Form inputs not validated :D
+
+            br
+            br
+
+            form(method="post", action="/admin/projects")
+                .form-group
+                    label Project Title
+                    input.form-control(type="text", name="projectTitle", value=projectTitle)
+                .form-group
+                    label Project Category
+                    input.form-control(type="text", name="projectCategory", value=projectCategory)
+                .form-group
+                    label Post Description
+                    textarea.form-control(name="projectDesc", id="projectDesc", rows="10") #{projectDesc}
+                .form-group
+                    label Project Cover
+                    input.form-control(type="text", name="projectCover", value=projectCover)
+                button.btn.btn-info(type='submit') Add
+                
+    br
+    br

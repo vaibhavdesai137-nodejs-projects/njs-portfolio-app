@@ -14,11 +14,10 @@ var moment = require('moment');
 var db = require('./db');
 
 var index = require('./routes/index');
-var home = require('./routes/home');
 var portfolio = require('./routes/portfolio');
 var about = require('./routes/about');
 var contact = require('./routes/contact');
-var categories = require('./routes/categories');
+var admin = require('./routes/admin');
 
 var app = express();
 app.locals.moment = moment;
@@ -88,11 +87,10 @@ app.use(function (req, res, next) {
 });
 
 app.use('/', index);
-app.use('/home', home);
 app.use('/portfolio', portfolio);
 app.use('/about', about);
 app.use('/contact', contact);
-app.use('/categories', categories);
+app.use('/admin', admin);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

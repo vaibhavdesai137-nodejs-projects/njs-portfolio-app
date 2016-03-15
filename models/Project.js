@@ -1,16 +1,10 @@
 var mongoose = require('mongoose');
 
 var projectSchema = new mongoose.Schema({
-    author: String,
     title: String,
     category: String,
-    content: String,
-    date: {
-        type: Date,
-        default: Date.now
-    },
-    imageName: String,
-    comments: []
+    desc: String,
+    cover: String
 });
 
 var Project = mongoose.model('projects', projectSchema);

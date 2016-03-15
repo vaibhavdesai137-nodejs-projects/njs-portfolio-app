@@ -1,0 +1,47 @@
+extends ../layout
+
+block content
+
+    br
+    br
+    br
+    br
+    br
+    br
+    
+    .container
+        .well
+            h1 Manage Projects
+            p You can add, edit and delete projects here
+
+        if projects.length
+            br
+            table.table.table-striped.table-hover
+                thead
+                    tr
+                        th Project ID
+                        th Project Title
+                        th Project Category
+                        th Actions
+                tbody
+                    each project, i in projects
+                        tr
+                            td #{project._id}
+                            td #{project.title}
+                            td #{project.category}
+                            td 
+                                a.btn.btn-primary.btn-sm(href="/admin/projects/edit/#{project._id}")
+                                    i.fa.fa-pencil &nbsp;&nbsp; Edit
+                                &nbsp;&nbsp;
+                                a.btn.btn-danger.btn-sm(href="javascript:deleteProject('#{project._id}');")
+                                    i.fa.fa-trash &nbsp;&nbsp; Delete
+        else
+            br
+            p No projects found. Add a new project using the button below
+            br
+
+        a.btn.btn-success.btn-sm(href="/admin/projects/add") Add New Project
+    
+    br
+    br
+    
