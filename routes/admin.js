@@ -3,7 +3,6 @@
 var express = require('express');
 var router = express.Router();
 var Project = require('./../models/Project');
-var Category = require('./../models/Category');
 
 var availableProjectCovers = [
     "cabin.png",
