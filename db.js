@@ -32,3 +32,4 @@ process.on('SIGINT', function () {
 });
 
 require('./models/Project');
+require('./models/Category');
