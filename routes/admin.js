@@ -3,7 +3,6 @@
 var express = require('express');
 var router = express.Router();
 var Project = require('./../models/Project');
-var Category = require('./../models/Category');
 
 var availableProjectCovers = [
     "cabin.png",
@@ -38,15 +37,10 @@ router.get('/projects', function (req, res) {
 
 // show add project page
 router.get('/projects/add', function (req, res) {
-
-    Category.find({}, function (err, categories) {
-        res.render('admin/projects/add', {
-            categories: categories,
-            title: "Add Project",
-            activeNav: "projects"
-        });
+    res.render('admin/projects/add', {
+        title: "Add Project",
+        activeNav: "projects"
     });
-
 });
 
 // add new project
@@ -88,16 +82,13 @@ router.get('/projects/edit/:id', function (req, res) {
 
         if (err) throw err;
 
-        Category.find({}, function (err, categories) {
-            var model = {
-                project: project,
-                categories: categories,
-                title: "Edit Project",
-                activeNav: "projects"
-            };
+        var model = {
+            project: project,
+            title: "Edit Project",
+            activeNav: "projects"
+        };
 
-            res.render('admin/projects/edit', model);
-        });
+        res.render('admin/projects/edit', model);
 
     });
 
